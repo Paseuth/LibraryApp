@@ -1,1 +1,47 @@
-<p>Test</p>
+<!DOCTYPE html>
+<html ng-app="eventApp" lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ressourcing christ">
+  <meta name="author" content="Agency Monica">
+  <title>Events</title>
+  <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/libs/bootstrap/css/shop-homepage.css" rel="stylesheet">
+  <link href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <div ng-view></div>
+  <script src="assets/libs/jquery.js"></script>
+  <script src="assets/libs/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/libs/angular-1.4.8/angular.min.js"></script>
+  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+  <script src="assets/libs/firebase.js"></script>
+  <script src="assets/libs/angularfire/dist/angularfire.js"></script>
+  <script src="assets/libs/angular-1.4.8/angular-route.min.js"></script>
+  <script src="assets/libs/angular-1.4.8/angular-cookies.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAJhcDVVgAJIy6CQsDTlA_q0hEyz2e6soE",
+      authDomain: "library-app-46d92.firebaseapp.com",
+      databaseURL: "https://library-app-46d92.firebaseio.com",
+      storageBucket: "library-app-46d92.appspot.com",
+      messagingSenderId: "654933251191"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="app.js"></script>
+  <script src="services/accountService.js"></script>
+  <script src="services/appService.js"></script>
+  <script src="controllers/accountController.js"></script>
+  <script src="controllers/announcementController.js"></script>
+  <script src="directives/eventAppDirective.js"></script>
+</body>
+
+</html>

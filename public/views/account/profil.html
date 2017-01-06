@@ -1,0 +1,16 @@
+<div ng-navbar></div>
+<div class="container" style="width:450px;">
+    <div>
+        <dl>
+            <dt>Identité</dt>
+            <dd>{{currentUser.Civility}} {{currentUser.FirstName}} {{currentUser.LastName}}</dd>
+            <dd>Adresse mail : {{currentUser.Email}}</dd>
+            <dd>Numéro de téléphone : {{currentUser.PhoneNumber}}</dd>
+        </dl>
+
+    </div>
+    <div>
+        <button type="submit" class="btn btn-default" ng-click="clickOnLogout();">Se déconnecter</button>
+    </div>
+</div>
+<div ng-footer></div>

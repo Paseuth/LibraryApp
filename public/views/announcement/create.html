@@ -1,0 +1,45 @@
+<div ng-navbar></div>
+<div class="container"style="width:450px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <form name="form_createAnnouncement" novalidate>
+                    <h3>Détail du livre</h3>
+                    <div class="form-group">
+                        <label for="createAnnouncement_category">Catégorie*</label>
+                        <select class="form-control" id="createAnnouncement_category" ng-model="createAnnouncement.Category" >
+                            <option value="0">Sélectionner la catégorie</option>
+                            <option value="art">Art, Musique et Cinéma</option>
+                            <option value="cuisine">Cuisine</option>
+                            <option value="religion">religion et spiritualité</option>
+                            <option value="policier">Policier et Suspense</option>
+                        </select>
+                        <div class="alert alert-danger" role="alert" ng-show="form_createAnnouncement.$submitted && createAnnouncement.Category == '0'">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> La catégorie est obligatoire
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="createAnnouncement_title">Titre de livre*</label>
+                        <input type="text" class="form-control" id="createAnnouncement_title" name="title" ng-model="createAnnouncement.Title" required>
+                        <div class="alert alert-danger" role="alert" ng-show="form_createAnnouncement.$submitted && form_createAnnouncement.title.$error.required">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Veuillez sélectionné le titre du livre
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="createAnnouncement_author">Auteur*</label>
+                        <input type="text" class="form-control" id="createAnnouncement_author" name="author" ng-model="createAnnouncement.Author" required>
+                        <div class="alert alert-danger" role="alert" ng-show="form_createAnnouncement.$submitted && form_createAnnouncement.author.$error.required">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Veuillez renseigné l'auteur du livre
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="createAnnouncement_description">Description du livre</label>
+                        <textarea class="form-control" id="createAnnouncement_description" name="description" ng-model="createAnnouncement.Description" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="clickOnCreateAnnouncement();">Valider</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-footer></div>

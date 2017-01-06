@@ -1,0 +1,78 @@
+<div ng-navbar></div>
+<div class="container" style="width:800px;">
+<div>
+    <form name="form_registerUser" novalidate>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h3>Identité</h3>
+                <div class="form-group">
+                    <label for="register_civility">Civilité*</label>
+                    <select class="form-control" id="register_civility" ng-model="registerUser.Civility" name="civility">
+                        <option value="0">Sélectionnez une civilité</option>
+                        <option value="Mr">Monsieur</option>
+                        <option value="Mme">Madame</option>
+                        <option value="Mlle">Mademoiselle</option>
+                    </select>
+                    <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && registerUser.Civility == '0'">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Veuillez sélectionné votre civilité
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register_lastName">Nom*</label>
+                    <input type="text" class="form-control" id="register_lastName" ng-model="registerUser.LastName" name="lastName" required>
+                     <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && form_registerUser.lastName.$error.required">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Veuillez rensigner votre nom
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register_firstName">Prénom*</label>
+                    <input type="text" class="form-control" id="register_firstName" ng-model="registerUser.FirstName" name="firstName" required>
+                     <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && form_registerUser.firstName.$error.required">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Veuillez rensigner votre prénom
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register_phoneNumber">Numéro de téléphone*</label>
+                    <input type="text" class="form-control" id="register_phoneNumber" ng-model="registerUser.PhoneNumber" name="phoneNumber" required>
+                    <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && form_registerUser.phoneNumber.$error.required">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Veuillez rensigner votre numéro de téléphone
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <h3>Vos identifiants</h3>
+                <div class="form-group">
+                    <label for="register_email">Adresse E-mail*</label>
+                    <input type="email" class="form-control" id="register_email" ng-model="registerUser.Email" name="email" required>
+                    <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && form_registerUser.email.$error.required">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Veuillez rensigner votre adresse email
+                    </div>
+                     <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && form_registerUser.email.$error.email">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Votre adresse email n'est pas valide
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register_password">Mot de passe*</label>
+                    <input type="password" class="form-control" id="register_password" ng-model="registerUser.Password" ng-minlength="6" name="password" required>
+                      <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && form_registerUser.password.$error.required">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Votre mot de passe est obligatoire
+                    </div>
+                      <div class="alert alert-danger" role="alert" ng-show="form_registerUser.$submitted && form_registerUser.password.$error.minlength">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Votre mot de passe doit comporter au moins 6 caractères
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register_confirmPassword">Confirmation du mot de passe*</label>
+                    <input type="password" class="form-control" id="register_confirmPassword" ng-model="registerUser.ConfirmPassword" name="confirmpassword" required>
+                      <div class="alert alert-danger" role="alert"  ng-show="(form_registerUser.password.$dirty || form_registerUser.confirmpassword.$dirty) && (registerUser.Password != registerUser.ConfirmPassword)">
+                          <i class="formError fa fa-exclamation-circle" title=""></i> Le mot de passe de correspond pas
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="clickOnRegister();">Valider</button>
+    </form>
+</div>
+
+</div>
+<div ng-footer></div>

@@ -1,0 +1,22 @@
+<div ng-navbar></div>
+<div class="container" style="width:450px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Page de connexion</h1>
+            <div>
+                <form name="form_login">
+                    <div class="form-group">
+                        <label for="login_email">Adresse mail : </label>
+                        <input type="email" class="form-control" id="login_email" ng-model="accountUser.Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="login_password">Mot de passe : </label>
+                        <input type="password" class="form-control" id="login_password" ng-model="accountUser.Password"> 
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="clickOnLogin();">Valider</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-footer></div>
