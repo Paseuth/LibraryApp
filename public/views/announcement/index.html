@@ -2,11 +2,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
+            <p>Nous référençons {{announcements.length}} livres</p>
            <input type="text" class="form-control" placeholder="Faire une recherche" ng-model="searchTitle" ng-value="searchTitle"/>
         </div>
         <div class="col-md-9">
             <div class="row">
-
                     <div ng-repeat="a in announcementsFiltered track by $index">
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
